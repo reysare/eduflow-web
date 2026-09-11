@@ -1,139 +1,223 @@
 /* Dashboard View Custom Stylesheet */
 
+/* =========================================================================
+   ROADMAP GENERATOR PANEL
+   ========================================================================= */
+.roadmap-generator-panel,
 .roadmap-generator-card {
   background-color: var(--white);
   border-radius: var(--radius-lg);
-  padding: 1.5rem;
+  padding: 1.5rem 1.75rem;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-light);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
+  transition: all var(--transition-normal);
 }
 
+.roadmap-generator-panel:hover,
+.roadmap-generator-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(34, 87, 62, 0.15);
+}
+
+.generator-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spark-circle-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(34, 87, 62, 0.12) 0%, rgba(16, 185, 129, 0.2) 100%);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.generator-title-text h3 {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.generator-title-text p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.roadmap-input-row,
 .generator-form {
   display: flex;
-  gap: 1rem;
+  gap: 0.85rem;
   align-items: center;
 }
 
-.generator-form .input-wrapper {
-  flex: 1;
-}
-
+.roadmap-generator-input,
 .generator-form input {
-  width: 100%;
+  flex: 1;
   height: 48px;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-medium);
+  border: 1.5px solid var(--border-medium);
   padding: 0 1.25rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
   outline: none;
   background-color: #fcfdfe;
+  color: var(--text-main);
   transition: all var(--transition-fast);
 }
 
+.roadmap-generator-input:focus,
 .generator-form input:focus {
   border-color: var(--primary);
   background-color: var(--white);
   box-shadow: 0 0 0 4px var(--primary-glow);
 }
 
+.btn-generate,
 .generator-form button {
   height: 48px;
+  padding: 0 1.5rem;
   font-size: 0.95rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
 }
 
-/* Weeks Path Grid */
+/* =========================================================================
+   DYNAMIC WEEKS TIMELINE ROW
+   ========================================================================= */
+.weeks-timeline-scroller {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.timeline-horizontal-row,
 .weeks-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
+.timeline-week-card,
 .week-card {
-  border-radius: var(--radius-md);
-  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  padding: 1.35rem 1.25rem;
   border: 1px solid var(--border-light);
-  background-color: #fdfefe;
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   position: relative;
   transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
 }
 
+.timeline-week-card:hover,
+.week-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.week-card-top,
 .week-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.week-number-label,
 .week-number-badge {
   font-family: var(--font-title);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 800;
   color: var(--text-muted);
-  background-color: #f1f3f2;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
+  background-color: #f1f4f2;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.04em;
 }
 
+.week-card-title,
 .week-title {
   font-family: var(--font-title);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-main);
+  line-height: 1.3;
 }
 
+.week-card-desc,
 .week-desc {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--text-body);
-  line-height: 1.4;
+  line-height: 1.45;
+  flex: 1;
 }
 
-/* Week states */
-.week-status-completed {
-  border-color: rgba(16, 185, 129, 0.2);
-  background-color: rgba(16, 185, 129, 0.02);
-}
-.week-icon-check {
-  color: var(--accent-emerald);
+/* Week status variations */
+.timeline-week-card.completed,
+.week-card.week-status-completed {
+  border-color: rgba(16, 185, 129, 0.3);
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.04) 0%, #ffffff 100%);
 }
 
-.week-status-active {
-  border-color: rgba(34, 87, 62, 0.25);
-  background-color: rgba(34, 87, 62, 0.02);
-  box-shadow: var(--shadow-sm);
+.timeline-week-card.completed .week-number-label {
+  background-color: #d1fae5;
+  color: #065f46;
 }
 
-.week-icon-dots {
-  display: flex;
-  gap: 3px;
-}
-.week-icon-dots span {
-  width: 5px;
-  height: 5px;
-  background-color: var(--primary);
-  border-radius: 50%;
-  animation: pulse 1.2s infinite ease-in-out;
-}
-.week-icon-dots span:nth-child(2) { animation-delay: 0.2s; }
-.week-icon-dots span:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.3; transform: scale(0.8); }
-  50% { opacity: 1; transform: scale(1.2); }
+.timeline-week-card.active,
+.week-card.week-status-active {
+  border-color: var(--primary);
+  background: linear-gradient(180deg, rgba(34, 87, 62, 0.04) 0%, #ffffff 100%);
+  box-shadow: 0 0 0 1px var(--primary), var(--shadow-md);
 }
 
-.week-status-locked {
-  background-color: #f8faf9;
+.timeline-week-card.active .week-number-label {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.timeline-week-card.locked,
+.week-card.week-status-locked {
+  background-color: #f9fbf9;
   border-color: var(--border-light);
   opacity: 0.75;
 }
-.week-icon-locked {
-  color: var(--text-muted);
+
+.timeline-active-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  border: 1px solid rgba(34, 87, 62, 0.2);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  margin-top: 0.25rem;
+  letter-spacing: 0.02em;
 }
+
+.week-icon-status {
+  flex-shrink: 0;
+}
+.week-icon-status.text-completed { color: var(--accent-emerald); }
+.week-icon-status.text-active { color: var(--primary); }
+.week-icon-status.text-locked { color: var(--text-muted); }
+
 
 /* Kanban Section */
 .kanban-section {

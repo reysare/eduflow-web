@@ -97,6 +97,331 @@
   color: var(--text-main);
 }
 
+/* =========================================================================
+   RESOURCES VIEW PANELS & FILE CARDS
+   ========================================================================= */
+.files-list-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.panel-header-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.panel-header-filter h3 {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.filter-pills-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.files-cards-list-scroller {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.file-item-card {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  transition: all var(--transition-normal);
+}
+
+.file-item-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-medium);
+}
+
+.file-card-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: #f1f5f3;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.file-card-middle {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.file-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.file-title-row h4 {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.file-dot-separator {
+  color: var(--border-medium);
+}
+
+.file-card-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.file-card-menu-container {
+  position: relative;
+}
+
+.file-card-dots {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.file-card-dots:hover,
+.file-card-dots.active {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--primary);
+}
+
+.file-dropdown-menu {
+  position: absolute;
+  top: 32px;
+  right: 0;
+  background-color: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  z-index: 100;
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: taskDropdownFadeIn 0.15s ease-out;
+}
+
+.file-dropdown-menu button {
+  background: transparent;
+  border: none;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: left;
+  color: var(--text-body);
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.1s ease;
+}
+
+.file-dropdown-menu button:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.file-dropdown-menu button.delete-btn {
+  color: #dc2626;
+  border-top: 1px solid var(--border-light);
+}
+
+.file-dropdown-menu button.delete-btn:hover {
+  background-color: #fef2f2;
+}
+
+.empty-files-placeholder {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border-medium);
+}
+
+/* =========================================================================
+   RIGHT WIDGETS: STORAGE & DIRECTORIES
+   ========================================================================= */
+.resources-widgets-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.storage-card-panel,
+.directories-card-panel {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.storage-card-panel h4,
+.directories-card-panel h4 {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.storage-donut-section {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.storage-donut-visual {
+  flex-shrink: 0;
+}
+
+.storage-donut-visual svg {
+  transform: rotate(-90deg);
+}
+
+.donut-number {
+  font-family: var(--font-title);
+  font-size: 0.55rem;
+  font-weight: 800;
+  fill: var(--text-main);
+  text-anchor: middle;
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+.donut-label {
+  font-size: 0.28rem;
+  font-weight: 600;
+  fill: var(--text-muted);
+  text-anchor: middle;
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+.storage-breakdown-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.breakdown-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+}
+
+.dot-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.bullet-pdf { background-color: #ef4444; }
+.bullet-csv { background-color: var(--accent-emerald); }
+.bullet-image { background-color: #3b82f6; }
+
+.breakdown-label {
+  color: var(--text-body);
+  flex: 1;
+}
+
+.breakdown-val {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.directory-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.directories-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dir-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background-color: #f8faf9;
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dir-item-row:hover {
+  background-color: var(--primary-light);
+  border-color: rgba(34, 87, 62, 0.2);
+}
+
+.dir-item-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.dir-folder-icon {
+  color: var(--primary);
+}
+
+.dir-arrow {
+  color: var(--text-muted);
+}
+
 /* File Grid */
 .files-cards-grid {
   display: grid;

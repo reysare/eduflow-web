@@ -73,6 +73,404 @@
   color: var(--text-main);
 }
 
+/* Phase tab badge row in RoadmapView.jsx */
+.phase-badge-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.phase-tab-tag {
+  font-family: var(--font-title);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.phase-tab-btn.active .phase-tab-tag {
+  color: var(--primary);
+}
+
+.phase-check {
+  color: var(--accent-emerald);
+}
+
+/* =========================================================================
+   ROADMAP MAIN GRID & PANELS
+   ========================================================================= */
+.roadmap-main-grid {
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.roadmap-info-panel,
+.contribution-log-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.roadmap-panel-card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.roadmap-card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-indicator {
+  font-family: var(--font-title);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+}
+
+.date-indicator {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.roadmap-panel-card h2 {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+.roadmap-panel-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+/* Progress Block */
+.progress-section-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #f8faf9;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.progress-outer-bar {
+  height: 8px;
+  background-color: #e5eae7;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-inner-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent-emerald) 100%);
+  border-radius: var(--radius-full);
+  transition: width 0.5s ease;
+}
+
+/* Steps list inside roadmap panel */
+.roadmap-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  background-color: #fdfefe;
+  transition: all var(--transition-fast);
+}
+
+.step-item:hover {
+  background-color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.step-item.checked {
+  border-color: rgba(16, 185, 129, 0.25);
+  background-color: rgba(16, 185, 129, 0.03);
+}
+
+.step-item.active {
+  border-color: rgba(34, 87, 62, 0.35);
+  background-color: rgba(34, 87, 62, 0.03);
+  box-shadow: var(--shadow-sm);
+}
+
+.step-check-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.step-item.checked .step-check-circle {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.step-item.active .step-check-circle {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.step-info h5 {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.step-info p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
+/* =========================================================================
+   CONTRIBUTION LOG PANEL
+   ========================================================================= */
+.contribution-log-panel {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contribution-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contribution-title-area h3 {
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.contribution-title-area p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.contribution-sub-tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 0.75rem;
+  overflow-x: auto;
+}
+
+.sub-tab-btn {
+  border: none;
+  background: transparent;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.sub-tab-btn:hover {
+  background-color: #f0f3f1;
+  color: var(--text-main);
+}
+
+.sub-tab-btn.active {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.logs-scroller-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 440px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.log-row-item {
+  display: flex;
+  gap: 0.85rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.log-row-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.log-user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1.5px solid var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.log-item-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.log-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.log-username {
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.log-timestamp {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.log-action-text {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.4;
+}
+
+/* File attachment card */
+.file-attachment-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #f8faf9;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.file-attach-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.file-attach-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.file-attach-size {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.file-arrow-right {
+  color: var(--text-muted);
+}
+
+/* Comment quote box */
+.comment-quote-box {
+  display: flex;
+  gap: 0.5rem;
+  background-color: #f4f8f6;
+  border-left: 3px solid var(--primary);
+  border-radius: 4px;
+  padding: 0.6rem 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.quote-icon {
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.comment-quote-text {
+  font-size: 0.82rem;
+  color: var(--text-body);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* Revision notes */
+.revision-badge-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background-color: #f5f6f5;
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  margin-top: 0.25rem;
+}
+
+.empty-logs-placeholder {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+
 .btn-calendar-view {
   height: 58px;
   padding: 0 1.5rem;
