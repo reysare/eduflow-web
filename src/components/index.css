@@ -147,6 +147,16 @@ body {
   white-space: nowrap;
 }
 
+.btn-lg {
+  padding: 0.8rem 1.6rem;
+  font-size: 0.95rem;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.8rem;
+}
+
 .btn-primary {
   background-color: var(--primary);
   color: var(--white);
